@@ -1,0 +1,121 @@
+//Job Class
+package test.ettaleb;
+
+public class Job {
+	int profit ;
+	int startTime ;
+	int endTime;
+	public Job(int profit,int start,int end) {
+		this.profit = profit ; 
+		this.endTime =end;
+		this.startTime = start;
+	}
+	public int getProfit() {
+		return profit;
+	}
+	public void setProfit(int profit) {
+		this.profit = profit;
+	}
+	public int getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(int startTime) {
+		this.startTime = startTime;
+	}
+	public int getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(int endTime) {
+		this.endTime = endTime;
+	}
+	
+
+}
+
+
+//Main Class
+package test.ettaleb;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the numbers of jobs");
+		ArrayList<Job> Jobs = new ArrayList<Job>();
+		ArrayList<Integer> startTime =new ArrayList<Integer>();
+		ArrayList<Integer> endtTime =new ArrayList<Integer>();
+		ArrayList<Integer> Profit = new ArrayList<Integer>();
+		
+		int n = sc.nextInt();
+		while(n>10000) {
+			System.out.println("the n must be less than 1000");
+			n = sc.nextInt();
+		}
+		for(int i=0;i<n ;i++) {
+			System.out.println("Start Times");
+			int s = sc.nextInt();
+			startTime.add(s);
+			
+		}
+		for(int i=0;i<n ;i++) {
+			System.out.println("End Times");
+			int s = sc.nextInt();
+			if(startTime.get(i)>s) {
+				System.out.println("the start end time must be sup to Start time");
+				s =sc.nextInt();
+			}
+			else {endtTime.add(s);}
+			
+			
+		}
+		
+		for(int i=0;i<n ;i++) {
+			System.out.println("Profits");
+			int s = sc.nextInt();
+			Profit.add(s);
+			
+		}
+		for(int i = 0;i<n;i++) {
+			int s = startTime.get(i);
+			int e = endtTime.get(i);
+			int p = Profit.get(i);
+			Job j = new Job(s,e,p);
+			Jobs.add(j);
+			
+		}
+		//first filtre
+		int maxProfit = 0;
+		int index =0;
+		for(int i =0;i<n;i++) {
+			if(Profit.get(i)>maxProfit) {
+				maxProfit = Profit.get(i);
+				index = i;
+			}
+		}
+//		second filtre
+		int secondMax =0;
+		ArrayList<Integer> indexs = new ArrayList<Integer>();
+		for(int i =0;i<n-1;i=i+2) {
+			if(endtTime.get(i) <startTime.get(i+1)) {
+				secondMax = Profit.get(i)+Profit.get(i+1);
+				indexs.add(i);
+				indexs.add(i+1);
+			}
+//			
+		}
+		if(maxProfit>secondMax)System.out.println(maxProfit);
+		else System.out.println(secondMax);
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}
