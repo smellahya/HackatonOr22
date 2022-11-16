@@ -1,0 +1,14 @@
+
+resultas=0
+start=[1,2,3,12,2]
+end=[3,5,7,1,4]
+prft=[20,10,80,50,20]
+if lent(end)>0 and len(end)<10000 :
+    for i in range(len(end)-1):
+        if (start[i+1]>= start[i] and start[i+1]<end[i] and prft[i+1]>prft[i]) or start[i+1]>start[i]:
+            
+            resultas += prft[i+1]
+       
+        else :
+            resultas += prft[i]
+    print(resultas)
