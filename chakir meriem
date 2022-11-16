@@ -1,0 +1,61 @@
+package javaproject;
+
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+
+
+public class Solution {
+	public static void main(String[] args) throws IOException {
+		Scanner scan = new Scanner(System.in);
+		ArrayList starttime = new ArrayList();
+		ArrayList endTime = new ArrayList();
+		ArrayList profit = new ArrayList();
+		String starttime_string = scan.nextLine();
+		    for(int i=1;i<starttime_string.length()-1;i=+2) {
+		    	int a = Integer.parseInt(String.valueOf(starttime_string.charAt(i)));
+		    	starttime.add(a);
+		    }
+		    String endTime_string = scan.nextLine();
+		    for(int i=1;i<endTime_string.length()-1;i=+2) {
+		    	int a = Integer.parseInt(String.valueOf(endTime_string.charAt(i)));
+		    	endTime.add(a);
+		    }
+		    String profit_string = scan.nextLine();
+		    for(int i=1;i<profit_string.length()-1;i=+2) {
+		    	int a = Integer.parseInt(String.valueOf(profit_string.charAt(i)));
+		    	profit.add(a);
+		    }
+		    ArrayList a = new ArrayList();
+		for(int i =0;i<starttime.size();i++) {
+			for(int j=1;j<starttime.size();j++) {
+				if(!(Integer.parseInt((String) starttime.get(i))>Integer.parseInt((String) starttime.get(j)) && Integer.parseInt((String) endTime.get(i))>Integer.parseInt((String) endTime.get(j)))) {
+					a.add(Integer.parseInt((String)profit.get(i))+Integer.parseInt((String)profit.get(j)));
+				}
+			}
+		}
+		int maximum = Integer.parseInt((String)profit.get(0));
+        for (int i = 1; i < profit.size(); i++) {
+            if (maximum < Integer.parseInt((String)profit.get(i)))
+                maximum = Integer.parseInt((String)profit.get(i));
+        }
+        System.out.println(maximum); 
+		    
+		
+	    
+		
+	  
+
+		
+
+	}
+}
