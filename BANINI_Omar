@@ -1,0 +1,34 @@
+
+startTime = [1,2,3,4,6]
+endTime = [3,5,10,6,9]
+profit = [20,20,100,70,60]
+profit=0
+def rg(e,r,list):
+    for i in range(r):
+        if (list[i]==e):
+            return i
+        else :
+            return 0,i
+
+
+r=0
+p=0
+def traitement():
+    while r<5 :
+            S=startTime[r]
+            e=endTime[r]
+            p+=profit[r]
+            z,r=rg(e,5,startTime)
+            if z==0 :
+                return r
+                break
+
+while (traitement):
+
+
+
+    
+            
+
+
+
