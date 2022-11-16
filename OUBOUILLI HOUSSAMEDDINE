@@ -1,0 +1,23 @@
+print("how many jobs are avaible")
+n = int(input())
+
+res=0
+
+s=[]
+e=[]
+p=[]
+
+s=[1,2,3,4,6]#exemple d'une liste pour start date
+e=[3,5,10,6,9]#exemple d'une liste pour end date 
+p=[20,20,100,70,60]#exemple d'une liste pour le profit
+
+
+if n>0 and n<10000 :
+    for i in range(n-1):
+        if (s[i+1]>= s[i] and s[i+1]<e[i] and p[i+1]>p[i]) or s[i+1]>s[i]:
+            
+            res += p[i+1]
+       
+        else :
+            res += p[i]
+    print(res)
