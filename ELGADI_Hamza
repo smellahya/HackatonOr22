@@ -1,0 +1,27 @@
+end_time = [3,4,5,6]
+start_time =  [1,2,3,3]
+profit =  [50,10,40,70]
+
+answer=[]
+profit_ans = 0
+end_time_temp = 0
+new_profit_to_compare = 0
+
+for j in range(len(end_time)):
+    if start_time[j] < end_time_temp:
+        continue
+
+    new_profit_to_compare = profit_ans
+    profit_ans =  profit_ans + profit[j]
+    answer.append(profit_ans)
+
+    if start_time[j+1] == end_time_temp :
+
+        new_profit_to_compare =  new_profit_to_compare + profit[j+1]
+        answer.append(new_profit_to_compare)
+    end_time_temp = end_time[j]
+
+ans = max(answer)
+
+print(answer)
+print(ans)
