@@ -1,0 +1,34 @@
+def profit(start , end , profit):
+    temp = 0
+    count = 0
+    startRejter = []
+    endRejter = []
+    s = []
+    
+    for j in range(len(start)):
+        s.append(profit[j]/(end[j]-start[j]))
+    print(s)
+    for i in range(len(start)):
+        check = 1
+        ma = max(s)
+
+        sa = start[s.index(ma)]
+        en = end[s.index(ma)]
+        for j in range(len(startRejter)):
+            if((sa > startRejter[j] and sa< endRejter[j]) or (en > startRejter[j] and en< endRejter[j])):
+                print("sa ",sa)
+                print("en ", en)
+                print("startRejter :",startRejter[j])
+                print("endRejter[j] :",endRejter[j])
+                check = 0
+                break
+
+        if(check == 0):
+            s[s.index(ma)] = 0
+            continue
+        startRejter.append(sa)
+        endRejter.append(en)
+        count += profit[s.index(ma)]
+        s[s.index(ma)] = 0
+    print(s)
+    return count
