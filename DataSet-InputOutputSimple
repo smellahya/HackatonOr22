@@ -1,34 +1,30 @@
------------------------------------------Data File for Testing-------------------------------------------------
+----------------------------------Context Problem------------------------------------------
+  
+A company has a list of jobs to perform. Each job has a start time, end time and profit value. The manager has asked his employee to pick jobs of his choice. The Employee being greedy wants to select jobs for him in such a way that would maximize his earnings. 
 
-Simple Input 1 : startTime = [1,2,3,3], endTime = [3,4,5,6], profit = [50,10,40,70]
+Given a list of jobs, how many jobs and total earnings are left for other employees once the employee picks jobs of his choice.
 
-Expected Output: 120.
+Note: The employee can perform only one job at a time.
 
-Explanation: The subset chosen is the first and fourth job.
+---Input Format---
 
-Profit Obteined: 120 = 50 + 70.
+Each Job has 3 pieces of info – Start Time,End Time and Profit.
+
+The first line contains the number of Jobs for the day. Say ‘n’. So there will be ‘3n lines following as each job has 3 lines.
+
+Each of the next ‘3n’ lines contains jobs in the following format:
+  
+                           ---Start time----
+                           ----End-Time----
+                           ----Profit-----
+                           
+---Constraints---
+
+--The number of jobs in the day is less than 10000 i.e. 0<_n<_10000.
+
+--Start-time is always less than end time.
 
 
-                                   **************************************
-                                   
-Input: startTime = [1,2,3,4,6], endTime = [3,5,10,6,9], profit = [20,20,100,70,60]
-
-Output: 150
-
-Explanation: The subset chosen is the first, fourth and fifth job.
-
-Profit obtained 150 = 20 + 70 + 60.      
-
-
-                                    **************************************
-                                    
-Input: startTime = [1,1,1], endTime = [2,3,4], profit = [5,6,4]
-
-Output: 6  
-
-Explanation: The subset chosen is second job.
-
-Profit Obtained:6
-
+P.S:Check the DataInputOutput File for more clarifications
                         
 
