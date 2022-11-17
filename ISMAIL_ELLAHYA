@@ -1,0 +1,48 @@
+import java.util.*;
+import java.io.*;
+
+class Main{
+    public static void main(String []argh){
+        int n;
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the number of jobs: ");
+        n=sc.nextInt();
+
+        int[] start = new int[n];
+        int[] end = new int[n];
+        int[] profit = new int[n];
+        System.out.println("fill in the array ");
+        for(int i=0; i<3; i++)
+        {
+            for (int j=0;j<n;j++){
+                {
+                    start[j]=sc.nextInt();
+                    end[j]=sc.nextInt();
+                    if(start[j] < end[j]){
+                        profit[j]=sc.nextInt();
+                    }
+
+                }
+
+                //System.out.println(start[j]);
+            }
+            //System.out.println(Arrays.toString(start));
+            //System.out.println(Arrays.toString(end));
+            //System.out.println(Arrays.toString(profit));
+
+        }
+        for(int i =0;i<3;i++){
+
+        }
+        for (int i = 0; i < profit.length; i++) {
+            for (int k = 0; k < profit.length; k++) {
+                if (profit[i] != profit[k]) {
+                    if(profit[k] > profit[i] ){
+                            //time is up unfortunately
+                    }
+                }
+            }
+        }
+        sc.close();
+    }
+}
